@@ -1,0 +1,25 @@
+name: Event Filter Lab
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*' # Matches feature/login, feature/api, etc.
+    paths:
+      - 'backend/**'   # Run if anything in backend changes
+      - '!backend/*.md' # IGNORE if ONLY a README in backend changes
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**' # Don't run if we only changed documentation
+
+jobs:
+  filter-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm Trigger
+        run: |
+          echo "Filter passed!"
+          echo "Event: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref_name }}"
