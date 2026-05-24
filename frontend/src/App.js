@@ -2,6 +2,8 @@ import React, { useState, useCallback } from 'react';
 import StudentList from './components/StudentList';
 import StudentForm from './components/StudentForm';
 
+// adding a comment to test event filters
+
 function App() {
     // State to force refresh StudentList when a new student is added
     const [refreshTrigger, setRefreshTrigger] = useState(0);
