@@ -7,6 +7,8 @@ const studentRoutes = require('./routes/studentRoutes');
 
 const app = express();
 
+// adding this line to test the event filters
+
 // Middleware
 app.use(cors());
 app.use(express.json()); // Body parser for JSON data
